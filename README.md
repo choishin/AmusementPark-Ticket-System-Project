@@ -15,4 +15,6 @@ Flow as below :
 Constant Value -> Main -> Processing -> Print Out -> FileWrite 
 InputConsole 
 
+Please change your Project Properties setting as 'UTF-8' to read comments. 
+
 Thank you.
