@@ -20,6 +20,7 @@ public class Processing {
 	/**1.이용권 종류를 받아 처리하기 **/
 	public void calType() throws ParseException, IOException {
 		int type = users.type;
+		
 		if (type == 1) {
 			ticketType = "day";
 		}
@@ -45,6 +46,12 @@ public class Processing {
 		String birthYear = identification.substring(0,2); //년도를 자르고
 		String birthDay = identification.substring(2,6); //생일을 자르고 
 		String judgeCentury = identification.substring(6); //태어난 세기를 알 수 있는 7번째 숫자를 자르기
+		
+		int judgeCenturyConvert = Integer.parseInt(judgeCentury);
+		if(judgeCenturyConvert !=1 && judgeCenturyConvert !=2 && judgeCenturyConvert !=3 && judgeCenturyConvert !=4) {
+			identification = "";
+			input.getAge();
+		}
 		
 		if (judgeCentury.equals("3")||judgeCentury.equals("4") ) {
 			birthYear = "20"+birthYear;

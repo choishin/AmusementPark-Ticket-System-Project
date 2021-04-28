@@ -15,7 +15,7 @@ public class FileWrite {
 		
 		public FileWrite() {
 			try {
-				File file = new File("C:\\Users\\최신\\Desktop\\amusementpark.csv");
+				File file = new File("amusementpark.csv");
 				if(file.exists() == false) {
 					isFileExist = false;
 				} else {
@@ -31,7 +31,7 @@ public class FileWrite {
 		public void headwrite() throws IOException {				
 			
 			if(isFileExist == false) {
-				String head = "Date," + "TicketType," +"Priority Level,"+ "TicketPrice," + "Quatity," + "TotalPrice," + "\n";
+				String head = "Date," + "TicketType," +"Priority Level,"+ "TicketPrice," + "Quantity," + "TotalPrice," + "\n";
 				bfw.write(head);
 			}
 		}
@@ -43,7 +43,7 @@ public class FileWrite {
 			UserValues users = new UserValues();
 			//1.날짜
 			String dateNow = format.format(date);
-			System.out.println(dateNow);
+			System.out.println(dateNow +" 예약완료");
 			bfw.append(dateNow+",");
 			//2.티켓 타입,  우대할인 내역
 			String ticketTypeKor = users.ticketTypeKor;

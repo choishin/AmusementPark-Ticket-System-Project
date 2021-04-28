@@ -13,39 +13,41 @@ public class Main {
 	static Processing processing = new Processing();
 	static PrintOut print = new PrintOut();
 	static FileWrite file = new FileWrite();
-	
+
 	public static void main(String[] args) throws ParseException, IOException {
 		// TODO Auto-generated method stub
-		while (true) {
-		showMenu();
-		int type = input.getType();
-		if(type == 3) {
-			main(null);
-			break;
-		}
-		users.type = type;
-		String identification = input.getAge();
-		users.identification = identification;
-		int quantity = input.getQuant();
-		users.quantity = quantity;
-		int priority = input.getPrioirity();
-		users.priority = priority;
-		
-		processing.calType();
-		processing.calAge();
-		processing.calQuant();
-		processing.calPriority();
-		processing.calTotal();
-		print.printResult();
 		file.headwrite();
-		file.filewrite();
-		
+		showMenu();
+		while(true) {
+			int type = input.getType();
+			if (type ==3 ) {
+				break;
+			}
+			if (type != 1 && type != 2 && type !=3) {
+				main(null);
+			}
+			users.type = type;
+			String identification = input.getAge();
+			users.identification = identification;
+			int quantity = input.getQuant();
+			users.quantity = quantity;
+			int priority = input.getPrioirity();
+			users.priority = priority;
+
+			processing.calType();
+			processing.calAge();
+			processing.calQuant();
+			processing.calPriority();
+			processing.calTotal();
+			print.printResult();
+			file.filewrite();
 		}
 		file.fileclose();
+
 	}
-	
+
 	static void showMenu() {
-		
+
 		System.out.println("**************************************************************");
 		System.out.printf("%s\n","이용권 가격 안내 ");
 		System.out.printf("%s\n","주간권 : 5,6000원(대인)  4,7000원(청소년) 4,4000원(소인,경로 )");
@@ -70,8 +72,8 @@ public class Main {
 		System.out.printf("%s\n","(5)임신부 우대");
 		System.out.printf("%s\n","▶임신부 본인 우대가로 구입 가능");
 		System.out.println("**************************************************************");
-		
-		
+
+
 	}
 
 }

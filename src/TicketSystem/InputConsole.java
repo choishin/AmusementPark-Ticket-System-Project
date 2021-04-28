@@ -12,7 +12,7 @@ public class InputConsole {
 		System.out.println("상품을 선택해주세요");
 		System.out.println("1. 주간권");
 		System.out.println("2. 야간권");
-		System.out.println("3. 뒤로가기");
+		System.out.println("3. 종료");
 		
 		int type = scanner.nextInt();
 		return type;

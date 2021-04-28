@@ -10,7 +10,7 @@ import java.util.Date;
 public class PrintOut {
 	static Main main = new Main();
 	static UserValues users = new UserValues();
-	public static void printResult() throws IOException {
+	public void printResult() throws IOException {
 		Date date = new Date();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 MM월 dd일 HH:mm:ss");
 		DecimalFormat df = new DecimalFormat("###,###,###,###,###,###");
@@ -54,16 +54,16 @@ public class PrintOut {
 			prioritySortKor = "일반";
 		}
 		else if(prioritySort.contains("handicap")) {
-			prioritySortKor = "장애인";
+			prioritySortKor = "장애인 우대";
 		}
 		else if(prioritySort.contains("honor")) {
-			prioritySortKor = "국가유공자";
+			prioritySortKor = "국가유공자 우대";
 		}
 		else if(prioritySort.contains("3kidsfamily")) {
-			prioritySortKor = "다자녀 가정";
+			prioritySortKor = "다자녀 가정 우대";
 		}
 		else if(prioritySort.contains("pregnant")) {
-			prioritySortKor = "임신부";
+			prioritySortKor = "임신부 우대";
 		}
 
 		users.ticketTypeKor =ticketTypeKor;
@@ -71,13 +71,13 @@ public class PrintOut {
 		users.prioritySortKor = prioritySortKor;
 		
 		//티켓 출력 폼
-		System.out.printf("*******************[예약내역]*****************\n");
+		System.out.printf("=============-=========[예약내역]=========================\n");
 		System.out.printf("선택하신 이용권 : %s %s %s %s원\n",prioritySortKor,AgeSortKor,ticketTypeKor,df.format(ticketPrice) );
 		System.out.printf("구매 개수 : %s개\n", df.format(ticketQuantity));
 		System.out.printf("총 금액 : %s원\n", df.format(totalPrice));
 		System.out.printf("우대 할인 내역  : %s \n", prioritySortKor);		
 		System.out.printf("티켓 예약 날짜 : %s \n",sdf.format(date) );				
-		System.out.printf("********************************************\n");
+		System.out.printf("==========================================================\n");
 		
 	}
 
