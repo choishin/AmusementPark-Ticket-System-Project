@@ -25,12 +25,12 @@ public class Main {
 			while(true) { 
 				//1.이용권 종류로 입력받은 값의 예외 처리
 				int type = input.getType();
+				if (type != 1 && type != 2 && type !=3) { //만일 선택지에 없는 숫자를 누른다면 다시 메인으로 돌아감
+					main(null);
+				}
 				if (type ==3 ) { //3번 '종료'를 누르면 티켓 구매 종료
 					System.out.println("티켓 발권을 종료합니다. 이용해 주셔서 감사합니다.");
 					break;
-				}
-				if (type != 1 && type != 2 && type !=3) { //만일 선택지에 없는 숫자를 누른다면 다시 메인으로 돌아감
-					main(null);
 				}
 				users.type = type;
 				//2.주민등록번호의 예외처리
