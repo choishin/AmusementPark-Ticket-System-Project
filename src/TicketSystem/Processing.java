@@ -51,7 +51,7 @@ public class Processing {
 		int judgeCenturyConvert = Integer.parseInt(judgeCentury);
 		if(judgeCenturyConvert !=1 && judgeCenturyConvert !=2 && judgeCenturyConvert !=3 && judgeCenturyConvert !=4) {
 			identification = "";
-			input.getAge();
+			main.main(null);
 		}
 		
 		if (judgeCentury.equals("3")||judgeCentury.equals("4") ) {
@@ -59,8 +59,7 @@ public class Processing {
 		}else if (judgeCentury.equals("1")||judgeCentury.equals("2") ) {
 			birthYear= "19"+birthYear;
 		} else {
-		AgeSort = "error";
-		System.out.println("error");
+			main.main(null);
 		}
 
 		String thisYear = thisyearformat.format(date); //시스템에서 받아온 올해

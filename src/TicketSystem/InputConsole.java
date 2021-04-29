@@ -23,10 +23,6 @@ public class InputConsole {
 	public String getAge() {
 		System.out.println("주민등록번호를 입력해주세요");
 		String identification = scanner.next();
-		if (identification.length() < 7) {
-			identification = "";
-			getAge();
-		}
 		return identification;
 	}
 	//3.사용자로부터 구매 개수를 입력받음.
