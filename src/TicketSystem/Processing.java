@@ -49,18 +49,12 @@ public class Processing {
 		String judgeCentury = identification.substring(6); //태어난 세기를 알 수 있는 7번째 숫자를 자르기
 		
 		int judgeCenturyConvert = Integer.parseInt(judgeCentury);
-		if(judgeCenturyConvert !=1 && judgeCenturyConvert !=2 && judgeCenturyConvert !=3 && judgeCenturyConvert !=4) {
-			identification = "";
-			main.main(null);
-		}
 		
 		if (judgeCentury.equals("3")||judgeCentury.equals("4") ) {
 			birthYear = "20"+birthYear;
 		}else if (judgeCentury.equals("1")||judgeCentury.equals("2") ) {
 			birthYear= "19"+birthYear;
-		} else {
-			main.main(null);
-		}
+		} 
 
 		String thisYear = thisyearformat.format(date); //시스템에서 받아온 올해
 		String today = todayformat.format(date); //시스템에서 받아온 오늘 날짜 		
