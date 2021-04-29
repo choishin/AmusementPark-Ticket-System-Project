@@ -1,6 +1,6 @@
 package TicketSystem;
 /*
- * ConstantValue : 놀이공원에서 제공하는 상품 이름과 가격을 배열에 저장
+ * ConstantValue Class : 놀이공원에서 제공하는 상품 이름과 가격을 배열에 저장해둠 (Processing Class에서 호출)
  */
 public class ConstantValue {
 
@@ -23,7 +23,7 @@ public class ConstantValue {
 			 "handicap_student_night_pass",
 			 "handicap_child_night_pass",
 			 "handicap_senior_night_pass",
-			//국가유공자 우대가격
+			//국가유공자 우대가격(주간,야간)
 			 "honor_adult_day_pass",
 			 "honor_student_day_pass",
 			 "honor_child_day_pass",
@@ -32,7 +32,7 @@ public class ConstantValue {
 			 "honor_student_night_pass",
 			 "honor_child_night_pass",
 			 "honor_senior_night_pass",
-			//다자녀 우대가격
+			//다자녀 우대가격(주간,야간)
 			 "3kidsfamily_adult_day_pass",
 			 "3kidsfamily_student_day_pass",
 			 "3kidsfamily_children_day_pass",
@@ -41,7 +41,7 @@ public class ConstantValue {
 			 "3kidsfamily_student_night_pass",
 			 "3kidsfamily_child_night_pass",
 			 "3kidsfamily_senior_night_pass",
-			//임신부 우대가격
+			//임신부 우대가격(주간,야간)
 			 "pregnant_adult_day_pass ",
 			 "pregnant_adult_night_pass",
 			
@@ -54,13 +54,13 @@ public class ConstantValue {
 			//장애인 우대가격 (주간,야간)
 			33000,28000,26000,26000,
 			27000,24000,23000,23000,
-			//국가유공자 우대가격
+			//국가유공자 우대가격(주간,야간)
 			28000,23500,22000,22000,
 			23000,20000,18500,18500,
-			//다자녀 우대가격
+			//다자녀 우대가격(주간,야간)
 			44000,37000,35000,35000,
 			36500,32000,29000,29000,
-			//임신부 우대가격
+			//임신부 우대가격(주간,야간)
 			47000,38000
 	};
 }

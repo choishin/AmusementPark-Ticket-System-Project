@@ -5,7 +5,8 @@ import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 /*
- * PrintOut : 사용자의 선택을 한국어로 변환하고, 티켓 폼 안에 출력 
+ * PrintOut Class : UserValues에 저장된 processing class의 각 데이터를 불러와
+ * 					한국어로 변환하고, 티켓 폼 안에 출력 
  */
 public class PrintOut {
 	static Main main = new Main();
@@ -71,12 +72,11 @@ public class PrintOut {
 		users.prioritySortKor = prioritySortKor;
 		
 		//티켓 출력 폼
-		System.out.printf("=============-=========[예약내역]=========================\n");
+		System.out.printf("=======================[예약내역]=========================\n");
 		System.out.printf("선택하신 이용권 : %s %s %s %s원\n",prioritySortKor,AgeSortKor,ticketTypeKor,df.format(ticketPrice) );
-		System.out.printf("구매 개수 : %s개\n", df.format(ticketQuantity));
-		System.out.printf("총 금액 : %s원\n", df.format(totalPrice));
-		System.out.printf("우대 할인 내역  : %s \n", prioritySortKor);		
-		System.out.printf("티켓 예약 날짜 : %s \n",sdf.format(date) );				
+		System.out.printf("구매 개수 : %s장\n", df.format(ticketQuantity));
+		System.out.printf("입장료 총액 : %s원\n", df.format(totalPrice));		
+		System.out.printf("티켓 예약 날짜 : %s \n",sdf.format(date) );	
 		System.out.printf("==========================================================\n");
 		
 	}

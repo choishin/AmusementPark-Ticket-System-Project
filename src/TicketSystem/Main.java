@@ -2,10 +2,14 @@ package TicketSystem;
 
 import java.io.IOException;
 import java.text.ParseException;
+import java.util.InputMismatchException;
+
 /*
- * Main : 	InputConsole 에서 사용자의 선택을 받아 Processing으로 전달하고,
- * 			Processing,Print, FileWrtie 로  데이터 처리 순서를 등록.
- * 			메뉴판을 보여줌.
+ * Main Class:   데이터 처리 순서를 등록.
+ * 				 메뉴판을 보여주고, InputConsole 에서 사용자의 선택 내용을 return받아 Processing으로 전달.
+ * 				 이후 Processing 과정이 끝나면, Print Class , FileWrite Class로 흐름을 이동 시킴.
+ * 개선해야 할 점 (1) : int 입력부분에 문자가 들어가는 경우, 예외 처리를 적용해야 함.
+ * 개선해야 할 점 (2) : 주민등록번호 예외처리
  */
 public class Main {
 	static InputConsole input = new InputConsole(); 
@@ -16,32 +20,43 @@ public class Main {
 
 	public static void main(String[] args) throws ParseException, IOException {
 		// TODO Auto-generated method stub
-		file.headwrite();
-		showMenu();
-		while(true) {
-			int type = input.getType();
-			if (type ==3 ) {
-				break;
-			}
-			if (type != 1 && type != 2 && type !=3) {
-				main(null);
-			}
-			users.type = type;
-			String identification = input.getAge();
-			users.identification = identification;
-			int quantity = input.getQuant();
-			users.quantity = quantity;
-			int priority = input.getPrioirity();
-			users.priority = priority;
+		showMenu(); //프로그램 시작과 동시에 안내사항을 보여주고
+		file.headwrite(); 
+			while(true) { 
+				//1.이용권 종류로 입력받은 값의 예외 처리
+				int type = input.getType();
+				if (type ==3 ) { //3번 '종료'를 누르면 티켓 구매 종료
+					System.out.println("티켓 발권을 종료합니다. 이용해 주셔서 감사합니다.");
+					break;
+				}
+				if (type != 1 && type != 2 && type !=3) { //만일 선택지에 없는 숫자를 누른다면 다시 메인으로 돌아감
+					main(null);
+				}
+				users.type = type;
+				//2.주민등록번호의 예외처리
+				String identification = input.getAge();
+				users.identification = identification;
+				
+				//3. 구매개수에 대한 예외처리
+				int quantity = input.getQuant();
+				users.quantity = quantity;
+				//4.우대사항에 대한 예외처리
+				int priority = input.getPrioirity();
+				//만일 선택지에 없는 숫자를 누른다면 다시 메인으로 돌아감
+				if (priority!= 0 && priority!= 1 && priority!= 2 && priority!= 3 && priority!= 4) { 
+					priority = input.getPrioirity();
+				}
+				users.priority = priority;
 
-			processing.calType();
-			processing.calAge();
-			processing.calQuant();
-			processing.calPriority();
-			processing.calTotal();
-			print.printResult();
-			file.filewrite();
-		}
+				processing.calType();
+				processing.calAge();
+				processing.calQuant();
+				processing.calPriority();
+				processing.calTotal();
+				print.printResult();
+				file.filewrite();
+		}			
+			
 		file.fileclose();
 
 	}

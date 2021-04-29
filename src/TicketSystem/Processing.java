@@ -5,7 +5,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 /*
- * Processing : 사용자의 선택을 받아와서 데이터 가공을 함.
+ * Processing Class : 사용자의 선택을 받아와서 데이터 가공을 함. 
+ * 					  (처리된 데이터는 UserVlaues Class에 저장.)
  */
 public class Processing {
 	static String ticketType;
@@ -20,7 +21,6 @@ public class Processing {
 	/**1.이용권 종류를 받아 처리하기 **/
 	public void calType() throws ParseException, IOException {
 		int type = users.type;
-		
 		if (type == 1) {
 			ticketType = "day";
 		}
@@ -32,8 +32,9 @@ public class Processing {
 		}
 		users.ticketType=ticketType;
 	}
-	/**2.주민번호를 받아 처리하기 **/
-	public void calAge() throws ParseException {
+	/**2.주민번호를 받아 처리하기 
+	 * @throws IOException **/
+	public void calAge() throws ParseException, IOException {
 
 		Date date = new Date();
 		SimpleDateFormat thisyearformat = new SimpleDateFormat("yyyy");
@@ -80,7 +81,7 @@ public class Processing {
 		}else if (judgeMinusOne > 0) { //생일 지났음
 			//System.out.println("already past");
 			judgeAge = judgeAge;
-		}else {//생일이 아직 안 지났음
+		}else {//생일이 아직 안 지났음 (1살을 빼줌)
 			judgeAge = judgeAge-1; 
 			//System.out.println("not yet"); 
 		}		
@@ -96,6 +97,7 @@ public class Processing {
 			AgeSort = "child";
 		}else {
 			AgeSort = "error";
+			Main.main(null);
 		}
 		
 		users.AgeSort = AgeSort;

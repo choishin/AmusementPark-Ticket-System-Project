@@ -7,7 +7,9 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 /*
- * FileWrite : 티켓을 구매한 날짜와 사용자가 선택한 티켓의 종류, 가격 등 csv 파일로 저장 
+ * FileWrite Class : Processing과 PrintOut에서 가공된 데이터를 UserValues에서 불러와
+ * 					 티켓의 종류, 가격 등 csv 파일로 저장 
+ * 개선해야 할 점 (1) : 종료를 누르기 전까지는 입력된 파일을 볼 수 없음.
  */
 public class FileWrite {
 		private BufferedWriter bfw;
@@ -43,7 +45,8 @@ public class FileWrite {
 			UserValues users = new UserValues();
 			//1.날짜
 			String dateNow = format.format(date);
-			System.out.println(dateNow +" 예약완료");
+			System.out.println(dateNow +" 예약이 완료되었습니다. 감사합니다.");
+			System.out.println();
 			bfw.append(dateNow+",");
 			//2.티켓 타입,  우대할인 내역
 			String ticketTypeKor = users.ticketTypeKor;

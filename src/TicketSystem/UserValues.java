@@ -1,6 +1,6 @@
 package TicketSystem;
 /*
- * UserValues : 사용자의 선택과 가공된 데이터를 이곳에 저장해서 불러옴.
+ * UserValues Class : 사용자의 선택과 가공된 데이터를 이곳에 저장해서 불러옴.
  */
 public class UserValues {
 		
