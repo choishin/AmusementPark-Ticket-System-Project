@@ -1,6 +1,6 @@
 # AmusementParkTicketSystemProject
 
-This project includes 7 classes and 16 methods.
+This project includes 8 classes and 20 methods.
 
 0. Constant Value Class : this class is to provide item names and prices for whole classes.
 1. InputConsole Class : this class is to get User's choices. (-> UsersValues)
@@ -9,6 +9,7 @@ This project includes 7 classes and 16 methods.
 4. Print Out Class : to print out the ticket reservation result. 
 5. Processing Class : to get all the user's choices and process for finding suitable item and price.
 6. FileWrite Class : to write the result of ticket reservation as '.csv' format file
+7. ResultCalculator Class : to analyse the ticket sales by calling wrriten'.csv 'file
 * UserValues Class :  to obtain and provide results in each classes.
 
 Flow as below :
