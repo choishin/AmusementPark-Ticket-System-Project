@@ -1,4 +1,4 @@
-package TicketSystem;
+package Ticketing;
 
 import java.io.BufferedWriter;
 import java.io.File;

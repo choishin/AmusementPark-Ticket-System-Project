@@ -1,4 +1,4 @@
-package TicketSystem;
+package Ticketing;
 /*
  * UserValues Class : 사용자의 선택과 가공된 데이터를 이곳에 저장해서 불러옴.
  */

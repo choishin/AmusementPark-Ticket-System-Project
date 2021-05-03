@@ -1,4 +1,4 @@
-package TicketSystem;
+package Ticketing;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -27,14 +27,12 @@ public class Processing {
 		else if  (type ==2) {
 			ticketType = "night";
 		}
-		else {
-			main.main(null);
-		}
+		
 		users.ticketType=ticketType;
 	}
 	/**2.주민번호를 받아 처리하기 
-	 * @throws IOException **/
-	public void calAge() throws ParseException, IOException {
+	 * @throws Exception **/
+	public void calAge() throws Exception {
 
 		Date date = new Date();
 		SimpleDateFormat thisyearformat = new SimpleDateFormat("yyyy");
@@ -49,10 +47,9 @@ public class Processing {
 		String judgeCentury = identification.substring(6); //태어난 세기를 알 수 있는 7번째 숫자를 자르기
 		
 		int judgeCenturyConvert = Integer.parseInt(judgeCentury);
-		
-		if (judgeCentury.equals("3")||judgeCentury.equals("4") ) {
+		if (judgeCentury.contains("3")||judgeCentury.contains("4") ) {
 			birthYear = "20"+birthYear;
-		}else if (judgeCentury.equals("1")||judgeCentury.equals("2") ) {
+		}else if (judgeCentury.contains("1")||judgeCentury.contains("2") ) {
 			birthYear= "19"+birthYear;
 		} 
 
@@ -90,7 +87,8 @@ public class Processing {
 			AgeSort = "child";
 		}else {
 			AgeSort = "error";
-			Main.main(null);
+			System.out.println("잘못입력하셨습니다");
+			main.main(null);
 		}
 		
 		users.AgeSort = AgeSort;

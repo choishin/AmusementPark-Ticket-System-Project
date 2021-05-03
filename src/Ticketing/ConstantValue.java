@@ -1,4 +1,4 @@
-package TicketSystem;
+package Ticketing;
 /*
  * ConstantValue Class : 놀이공원에서 제공하는 상품 이름과 가격을 배열에 저장해둠 (Processing Class에서 호출)
  */
