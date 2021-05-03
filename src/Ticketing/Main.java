@@ -8,8 +8,6 @@ import java.util.InputMismatchException;
  * Main Class:   데이터 처리 순서를 등록.
  * 				 메뉴판을 보여주고, InputConsole 에서 사용자의 선택 내용을 return받아 Processing으로 전달.
  * 				 이후 Processing 과정이 끝나면, Print Class , FileWrite Class로 흐름을 이동 시킴.
- * 개선해야 할 점 (1) : int 입력부분에 문자가 들어가는 경우, 예외 처리를 적용해야 함.
- * 개선해야 할 점 (2) : 주민등록번호 예외처리
  */
 public class Main {
 	static InputConsole input = new InputConsole(); 
