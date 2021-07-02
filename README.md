@@ -1,3 +1,2 @@
-# AmusementParkTicketSystemProject
-This is ticket sales System written by Java. It includes 7 classes and 16 methods. <br>
-Java basic Final Project in KOPO curriculum. <br>
+<h1>AmusementPark-Ticket-System-Project</h1>
+유원지 티켓 판매 시스템 및 매출 분석 프로그램
